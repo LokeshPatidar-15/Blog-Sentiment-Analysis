@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+langdetect
+transformers
+torch
+selenium
+webdriver-manager
