@@ -43,7 +43,7 @@ def fetch_blog_text(url):
 	except Exception as e:
 		logging.error(f"[Requests] Error: {e}")
 
-	# Fallback: use Selenium for JS-rendered content
+	# Fallback uuse Selenium for JS-rendered content
 	try:
 		chrome_options = Options()
 		chrome_options.add_argument('--headless')

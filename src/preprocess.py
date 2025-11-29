@@ -10,14 +10,14 @@ def clean_text(text):
 	"""
 	# Remove HTML tags
 	text = BeautifulSoup(text, "html.parser").get_text()
-	# Remove emojis and non-ASCII
+
 	text = text.encode('ascii', 'ignore').decode('ascii')
-	# Remove special characters
+
 	text = re.sub(r'[^\w\s.,!?]', '', text)
-	# Normalize whitespace
+
 	text = unicodedata.normalize('NFKC', text)
 	text = re.sub(r'\s+', ' ', text).strip()
-	# Language detection (English only)
+	
 	try:
 		lang = detect(text)
 		if lang != 'en':

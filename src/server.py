@@ -49,4 +49,4 @@ def sentiment_endpoint(request: TextRequest):
     summary = summarize_one_line(cleaned)
     return {"sentiment": sentiment, "summary": summary}
 
-# For local testing, run: uvicorn src.server:app --reload
+#  uvicorn src.server:app --reload

@@ -8,20 +8,22 @@ def analyze_blog(url):
 	"""
 	Given a blog URL, returns a dict with 'summary' and 'sentiment'.
 	"""
-	# Step 1: Fetch blog text
+	#  Fetch blog text
 	text = fetch_blog_text(url)
 	if not text:
 		return {"error": "Could not fetch blog content."}
 
-	# Step 2: Preprocess text
+	#  Preprocess text
 	cleaned = clean_text(text)
 	if not cleaned:
 		return {"error": "Blog is not in English or could not be cleaned."}
 
-	# Step 3: Summarize
+	#  Summarize
 	summary = summarize_one_line(cleaned)
 
-	# Step 4: Sentiment analysis
+	#  Sentiment analysis
 	sentiment = predict_sentiment(cleaned)
 
 	return {"summary": summary, "sentiment": sentiment}
+
+#  uvicorn src.server:app --reload
